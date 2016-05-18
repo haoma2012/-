@@ -1,0 +1,7 @@
+基于TextureView的视频播放控件
+
+Android原生提供了一个视频播放控件 - VideoView，但VideoView是基于SurfaceView实现的，SurfaceView会单独一个窗口用来绘制，它不在View hierachy中，显示也不受View的属性控制，不能进行平移，缩放等变换，也难以放在ListView或者ScrollView中，一些View中的特性也无法使用。
+
+为了弥补SurfaceView的不足，Android在4.0中加入了TextureView，它并没有创建一个单独的窗口用来绘制，这使得它可以像一般的View一样执行一些变换操作，设置透明度等，也很方便的放在其它ViewGroup中
+
+所以要在ListView或者RecyclerView中播放视频，我们就需要实现基于TextureView的VideoView，实现代码参考ViewVideo就可以了
